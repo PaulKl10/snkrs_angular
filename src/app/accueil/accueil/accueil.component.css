@@ -1,0 +1,222 @@
+.body{
+    width: 90%;
+    margin: auto;
+}
+/* SECTION H1 */
+.titreh1{
+    border: 4px solid #FF6165;
+    border-radius: 15px;
+    padding: 5px;
+    width: 98%;
+    margin-right: 0;
+    margin-top: 50px;
+}
+.ligne2{
+    border: 4px solid #173E70;
+    border-radius: 15px;
+    padding: 5px;
+}
+.ligne3{
+    border: 4px solid #FFB12C;
+    border-radius: 15px;
+}
+.texteh1{
+    margin-bottom: 20px;
+    padding: 20px;
+}
+.texteh1 h1{
+    color: #FF6165;
+    font-weight: bold;
+    font-size: 2rem;
+}
+.texteh1 a{
+    color: #173E70;
+    background-color: #FF6165;
+    padding: 5px 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+.ligne3 img{
+    transform: rotate(-15deg) scale(1.3);
+    margin-left: -10vw;
+    margin-top: 20px;
+    min-width: 350px;
+}
+@media(max-width:875px){
+    .ligne3 img{
+        transform:rotate(-15deg) scale(1);
+    }
+}
+@media(max-width:790px){
+    .ligne3 img{
+        transform:rotate(-15deg) scale(0.9);
+    }
+}
+@media(max-width:760px){
+    .ligne3 img{
+        transform:rotate(-15deg) scale(0.8);
+    }
+}
+@media(max-width:735px){
+    .ligne3 img{
+        transform:rotate(-15deg) scale(0.8);
+    }
+    .texteh1{
+        min-width: 350px;
+    }
+}
+@media(max-width:735px){
+    .ligne3 img{
+        transform:rotate(-25deg) scale(0.8);
+        margin-left: -15vw;
+    }
+}
+@media(max-width:670px){
+    .ligne3 img{
+        margin-left: -25vw;
+        margin-top: 27vh;
+    }
+}
+@media(max-width:610px){
+    .ligne3 img{
+        margin-left: -40vw;
+        margin-top: 35vh;
+    }
+    .texteh1{
+        min-width: 400px;
+    }
+}
+@media(max-width:590px){
+    .titreh1{
+        border: none;
+        margin-bottom: 150px;
+        margin-top: -50px;
+    }
+    .ligne2{
+        border: none;
+    }
+    .ligne3{
+        border: none;
+    }
+    .ligne3 img{
+        margin-left: -43vw;
+        margin-top: 90vh;
+        transform:rotate(-25deg) scale(1);
+        min-width: 300px;
+    }
+}
+@media(max-width:550px){
+    .ligne3 img{
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    .d-flex{
+        flex-direction: column;
+    }
+    .titreh1{
+        margin-top: 20px;
+        width: auto;
+    }
+}
+
+/* SECTION PRESENTATION */
+.pres{
+    margin-top: 140px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 50px;
+    width: 85vw;
+    border-left: 3px solid #FFB12C;
+    border-right: 3px solid #173E70;
+}
+.pres p{
+    text-align: center;
+    font-size: 1.5rem;
+    padding-top: 10px;
+    width: 60%;
+    height: auto;
+}
+/* SECTION COLLECTION */
+.border1{
+    border: 4px solid #FF6165;
+}
+.border2{
+    border: 4px solid #173E70;
+}
+.border3{
+    border: 4px solid #FFB12C;
+}
+.collection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 70px;
+}
+.collection .decouvrir{
+    color: #173E70;
+    background-color: #FF6165;
+    padding: 5px 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin-top: 50px;
+}
+/* SECTION UN NFT ? */
+.borderjaune{
+    border: none;
+    border-top: 3px solid #FFB12C;
+    border-radius: 0 !important;
+    color: #173E70 !important;
+    width: 70vw;
+    margin: auto;
+}
+.accordion-button:not(.collapsed) {
+    background-color: white !important;
+    color: #173E70 !important;
+    box-shadow: none;
+}
+.bordernone{
+    border-radius: 0 !important;
+    padding-top: 0 !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    width: 100%;
+    color: #173E70 !important;
+}
+h3{
+    font-size: 2rem;
+    color: #FF6165;
+    margin-bottom: 10px;
+    margin-left: 8vw;
+}
+h4{
+    color: #FF6165;
+    margin-bottom: 10px;
+}
+h5{
+    color: #FF6165;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+/* NEWSLETTER */
+.background{
+    background-color: #D9D9D9;
+}
+.contactmargin{
+    margin-top: 0;
+}
+.contactmargin img{
+    transform: scaleX(-1) rotate(30deg);
+    margin-bottom: 68px;
+    min-width: 400px;
+    max-width: 450px;
+}
+.divmargin{
+    margin-right: -17vw;
+}

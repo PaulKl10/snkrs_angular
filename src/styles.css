@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Kodchasan&display=swap');
+body{
+    font-family: 'Kodchasan', sans-serif;   
+}
+
+.logo{
+    font-family: 'Comic Neue', cursive;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.logo span{
+    color: #FF6165;
+    background-color: black;
+    border-radius: 15px;
+    padding: 3px 5px;
+    font-weight: 100;
+}

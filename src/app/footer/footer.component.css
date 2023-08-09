@@ -1,0 +1,14 @@
+/* FOOTER */
+footer{
+    height: auto;
+    background-color: #FF6165;
+}
+footer a{
+    text-decoration: none;
+    color: white;
+}
+.traitblanc{
+    width: 35%;
+    height: 3px;
+    background-color: white;
+}

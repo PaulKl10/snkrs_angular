@@ -1,0 +1,15 @@
+.body{
+    width: 90%;
+    margin: auto;
+}
+/* HEADER */
+.btn1{
+    color: white;
+    background-color: #FF6165;
+    max-width: 160px;
+}
+.btn1:hover{
+    box-shadow: inset 0px 2px 5px black;
+    background-color: #FF6165;
+    
+}

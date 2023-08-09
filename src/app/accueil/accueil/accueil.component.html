@@ -1,0 +1,103 @@
+ <div class="body">
+   <!-- SECTION H1 -->
+   <section class="titreh1 mx-auto">
+      <div class="ligne2">
+          <div class="ligne3 d-flex">
+              <div class="texteh1 my-auto">
+                  <h1>Portez vos sneakers préférées où vous voulez !</h1>
+                  <a href="">Découvrir la collection</a>
+              </div>
+              <div class="">
+                <img src="../../../assets/img/snkrs.png" class="w-75" alt="sneakers">
+              </div>
+          </div>
+      </div>
+   </section>
+   <section class="pres mx-auto">
+      <div class="logo">NFT<span>SNKRS</span></div>
+      <p>a été créé  en 2022 en partenariat avec plusieurs marques (Nike, Adidas...) afin de vous proposez une collections de NFT spécialement pour vous.</p>
+   </section>
+   <section class="collection p-4">
+      <div class="row justify-content-center text-center row-cols-lg-3 row-cols-md-2 row-cols-1 g-5 p-2">
+          <div class="col-md col-9" *ngFor="let nft of nfts.slice(0.6); let i=index">
+              <a href="" class="w-100"><img class="rounded-4 w-100 h-100 img-fluid" [src]="'../../../assets/img/' + nft.img" alt="" [ngClass]="getBorderClass(i)"></a>
+          </div>
+      </div>
+      <a class="decouvrir" href="">Découvrir la collection</a>
+   </section>
+   <section id="unnft?" class="container mb-5">
+    <h3>un NFT ?</h3>
+      <div class="accordion" id="accordionExample">
+              <div class="accordion-item borderjaune">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button bordernone fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Un NFT comment ça marche ?
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                      <p>NFT signifie "jeton non fongible". L’adjectif « fongible » est un terme économique qui fait référence à un bien ou à un actif pouvant être échangé contre un autre bien ou un autre actif de même valeur. Un élément « non fongible » ne peut pas être échangé contre quelque chose de valeur égale.Enfin, le Larousse le définit ainsi : "Se dit de choses qui se consomment par l'usage et qui peuvent être remplacées par des choses de même nature, de même qualité et de même quantité (par exemple denrées, argent comptant)."
+                      </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item borderjaune">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button borderjaune fs-4 collapsed bordernone" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Un NFT qu'est-ce que c'est ?
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                      <p>Donc un NFT est un fichier numérique auquel est attaché un certificat d’authenticité numérique, le rendant unique et non interchangeable. En obtenant un NFT, un acheteur devient le propriétaire exclusif d’un bien numérique : une peinture, une vidéo, une photographie, un mème, un élément de jeu vidéo, un film, etc.Les NFTs sont avant tout une méthode, celle de l'authenticité garantie par un certificat sécurisé par blockchain (on vous en donne une définition précise juste en-dessous). Le marché impacté s’élève déjà à $10Mds (c'est une estimation) et celui-ci pourrait trouver de nombreux cas d'usage. Un NFT garantit la propriété exclusive d’un actif numérique.Un NFT peut s’acheter à un certain prix, mais le fait qu’il soit non fongible permet à sa valeur marchande de fluctuer.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item borderjaune">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button borderjaune fs-4 collapsed bordernone" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      La définition de la blockchain
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                      <p>La blockchain, elle, est comme un « grand cahier informatique, partagé, infalsifiable et indestructible », décrit le mathématicien Jean-Paul Delahaye.C’est une technologie de stockage et de transmission d’informations, transparente, sécurisée et sans organe central de contrôle. Elle a la particularité d’être partagée simultanément avec tous ses utilisateurs et elle ne dépend d'aucun organe central. Elle présente l’avantage d'être rapide et sécurisée.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+   </section>
+   <section class="container p-5">
+    <h3 class="text-center mx-0">Qui sommes-nous ?</h3>
+    <div class="row row-cols-1 row-cols-md-2 text-center p-5 g-5">
+        <div class="col">
+          <img class="img-fluid rounded-circle p-2" src="../../../assets/img/personne2.jpeg" alt="" class="rounded-circle" style="width:250px;">
+          <h4 class="mx-auto p-2">Josianne "Josy"</h4>
+          <p>Conceptrice et chef de projet</p>
+      </div>
+      <div class="col">
+          <img class="img-fluid rounded-circle p-2" src="../../../assets/img/personne1.jpeg" alt="" class="rounded-circle" style="width:250px;">
+          <h4 class="mx-auto p-2">Paul Klein</h4>
+          <p>Développeur</p>
+      </div>
+    </div>
+   </section>
+   <section class="container contactmargin p-5 pb-lg-0 mb-5 mb-lg-0">
+    <div class="row align-items-end">
+      <div class="col divmargin d-none d-lg-block">
+        <img src="../../../assets/img/snkrs.png" class="img-fluid" alt="sneakers">
+      </div>
+      <div class="background col py-3 px-0 rounded-4 w-50 h-75 ms-auto">
+        <h5 class="px-3 text-center">Ne ratez aucune nouvelles collections en vous inscrivant à la newsletter ! </h5>
+        <div class="d-flex gap-3 justify-content-center mt-4">
+          <div class="form-floating w-50">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+          </div>
+          <a class="px-3 py-2 rounded my-auto" style="background-color: #FF6165; text-decoration: none; color: black;" href="">Envoyer</a>
+        </div>
+      </div>
+   
+    </div>
+   </section>
+ </div>
