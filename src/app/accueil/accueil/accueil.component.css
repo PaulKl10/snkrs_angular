@@ -118,6 +118,12 @@
         margin-top: 20px;
         width: auto;
     }
+    .texteh1{
+        min-width: 0;
+    }
+    .texteh1 a{
+        display: inline-block;
+    }
 }
 
 /* SECTION PRESENTATION */
@@ -139,32 +145,6 @@
     padding-top: 10px;
     width: 60%;
     height: auto;
-}
-/* SECTION COLLECTION */
-.border1{
-    border: 4px solid #FF6165;
-}
-.border2{
-    border: 4px solid #173E70;
-}
-.border3{
-    border: 4px solid #FFB12C;
-}
-.collection{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 70px;
-}
-.collection .decouvrir{
-    color: #173E70;
-    background-color: #FF6165;
-    padding: 5px 10px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-size: 1.5rem;
-    margin-top: 50px;
 }
 /* SECTION UN NFT ? */
 .borderjaune{
@@ -202,21 +182,4 @@ h5{
     color: #FF6165;
     font-size: 1.3rem;
     margin-bottom: 10px;
-}
-
-/* NEWSLETTER */
-.background{
-    background-color: #D9D9D9;
-}
-.contactmargin{
-    margin-top: 0;
-}
-.contactmargin img{
-    transform: scaleX(-1) rotate(30deg);
-    margin-bottom: 68px;
-    min-width: 400px;
-    max-width: 450px;
-}
-.divmargin{
-    margin-right: -17vw;
 }

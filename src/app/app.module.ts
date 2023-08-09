@@ -6,7 +6,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AccueilModule } from './accueil/accueil.module';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ApiService } from './api.service';
+import { ApiService } from './services/api/api.service';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ApiService } from './api.service';
     BrowserModule,
     AppRoutingModule,
     AccueilModule,
-    HttpClientModule
+    HttpClientModule,
+    NgChartsModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

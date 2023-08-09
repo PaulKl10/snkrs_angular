@@ -1,3 +1,19 @@
+/* NEWSLETTER */
+.background{
+    background-color: #D9D9D9;
+}
+.contactmargin{
+    margin-top: 0;
+}
+.contactmargin img{
+    transform: scaleX(-1) rotate(30deg);
+    margin-bottom: 68px;
+    min-width: 400px;
+    max-width: 450px;
+}
+.divmargin{
+    margin-right: -17vw;
+}
 /* FOOTER */
 footer{
     height: auto;
