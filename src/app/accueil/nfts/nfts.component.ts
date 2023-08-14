@@ -7,7 +7,7 @@ import { ApiService } from 'src/app/services/api/api.service';
   styleUrls: ['./nfts.component.css']
 })
 export class NftsComponent implements OnInit {
-  nfts: any = [];
+  nfts: Nft[] = [];
   constructor(private service: ApiService) { }
 
   ngOnInit() {
@@ -27,4 +27,19 @@ export class NftsComponent implements OnInit {
     const classes = ['border1', 'border2', 'border3'];
     return classes[index % classes.length];
   }
+}
+
+interface Nft {
+  id: number;
+  name: string;
+  description: string;
+  img: string;
+  launch_date: string;
+  nftPrice: number | null;
+  stock: number;
+  purchaseNfts: any[]; // Remplacez 'any' par le type correct si nécessaire
+  category: {
+    name: string;
+    description: string;
+  };
 }

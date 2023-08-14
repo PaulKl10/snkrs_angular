@@ -1,8 +1,8 @@
 <!-- SECTION 1 NFT -->
-<section class="container mt-5">
+<section class="container mt-5" *ngIf="nft">
     <div class="row g-5 p-4 row-cols-1 row-cols-lg-2">
-        <div class="col text-center text-lg-end">
-            <img class="img-fluid border2" src="../../../assets/img/wotherspoon.jpg" alt="wotherspoon">
+        <div  class="col text-center text-lg-end">
+            <img class="img-fluid border2" [src]="'../../../assets/img/' + nft.img" alt="nft.name">
         </div>
         <div class="col d-flex flex-column ps-5 ps-lg-2 pe-lg-5">
         <!-- H2 et COEUR -->
@@ -13,15 +13,13 @@
             </svg>
         </div>
         <!-- H3 -->
-        <h3 class="m-0 mb-3">Air Max 97/1 Sean Wotherspoon</h3>
+        <h3 class="m-0 mb-3">{{nft.name}}</h3>
         <!-- TEXTE DESCRIPTION NFT -->
-        <p class="pe-5">Dessinée par Sean Wotherspoon, le fondateur du magasin Round Two à Los Angeles et grand gagnant du concours Nike Air Max en 2017, cette sneaker est sans conteste l’un des modèles les plus connus de chez Nike.</p>
+        <p class="pe-5">{{nft.description}}</p>
         <!-- PRIX -->
-        <span class="fs-3 mb-3">5.63 ETH <img width="55px" src="../../../assets/img/ethereum.png" alt="ethereum"></span>
+        <span class="fs-3 mb-3">{{nft.nftPrice.price_eth_value}}<img width="55px" src="../../../assets/img/ethereum.png" alt="ethereum"></span>
         <!-- QUANTITÉ -->
-        <span class="bleu fw-bold mb-2">Quantité: 20</span>
-        <!-- EN VENTE -->
-        <span class="rose fw-bold">En vente : 16</span>
+        <span class="bleu fw-bold mb-2">Quantité: {{nft.stock}}</span>
         <!-- BOUTON ACHETER OU FAIRE UNE OFFRE -->
         <div class="d-flex gap-4 mt-5 mx-auto mx-lg-0">
             <button type="button" class="btn btn1 nav-link my-auto text-white p-2">Acheter
@@ -32,17 +30,4 @@
         </div>
     </div>
 </section>
-<!-- COURBE ETH -->
-<canvas id="myChart"></canvas>
-<!-- SECTION DESCRIPTION -->
-<section class="container my-5 p-description">
-<h3 class="m-0 mb-3">Description</h3>
-<div class="ligneb mb-3"></div>
-<p>Lorem ipsum dolor sit amet consectetur. Eleifend consectetur ut aliquet dictum. Nisl tempor non donec cras ut sit
-    dignissim. Varius semper arcu orci sed sed quis. Eget tellus congue arcu suspendisse laoreet proin ut quis. Sociis
-    viverra lorem egestas arcu amet sed lectus. Convallis ut senectus metus feugiat eleifend. Cras eget id nisl est
-    malesuada. Eleifend id varius in ultrices scelerisque viverra placerat vel. Ultricies felis aliquam blandit
-    ullamcorper purus ut felis. Et fermentum velit in laoreet massa massa nulla.
-    Faucibus accumsan dictum velit porttitor gravida orci. Adipiscing vivamus aliquet blandit amet. Suspendisse pellentesque ullamcorper quis nisl in massa. Feugiat volutpat praesent cras sagittis tempus quis nisl euismod. Eleifend est lacus fermentum dui congue tempor vulputate tortor.
-    Ut nibh viverra imperdiet cras sapien dictum vitae. Egestas at at quam euismod.</p>
-</section>
+<app-courbe-eth></app-courbe-eth>

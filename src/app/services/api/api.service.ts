@@ -14,4 +14,16 @@ export class ApiService {
   getNfts(): Observable<any> {
     return this.http.get(`${this.baseUrl}/nft`);
   }
+
+  getNft($id: any): Observable<any> {
+    return this.http.get(`${this.baseUrl}/nft/${$id}`);
+  }
+
+  getCategories(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/category`);
+  }
+
+  getCategory($id: any): Observable<any> {
+    return this.http.get(`${this.baseUrl}/category/${$id}`);
+  }
 }

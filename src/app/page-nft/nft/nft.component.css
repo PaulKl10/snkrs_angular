@@ -48,15 +48,6 @@ h5{
     margin-bottom: 10px;
 }
 
-#myChart{
-    margin: auto;
-    margin-top: 100px !important;
-    margin-bottom: 100px !important;
-    max-height: 70vh;
-    width: 70vw;
-    max-width: 70vw;
-}
-
 .btn1{
     color: white;
     background-color: #FF6165;
@@ -66,4 +57,8 @@ h5{
     box-shadow: inset 0px 2px 5px black;
     background-color: #FF6165;
     
+}
+
+p{
+    text-align: justify;
 }
