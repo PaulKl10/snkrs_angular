@@ -11,6 +11,7 @@ import { NgChartsModule } from 'ng2-charts';
 import { CommonModule } from '@angular/common';
 import { PageNftModule } from './page-nft/page-nft.module';
 import { CollectionsModule } from './collections/collections.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CollectionsModule } from './collections/collections.module';
     NgChartsModule,
     CommonModule,
     PageNftModule,
-    CollectionsModule
+    CollectionsModule,
+    FormsModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]
