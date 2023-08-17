@@ -17,7 +17,6 @@ export class CategoryComponent {
       const nftId = params.get('id');
       this.api.getCategory(nftId).subscribe(categoryData => {
         this.category = categoryData;
-        console.log(this.category);
       });
     });
     window.scrollTo(0, 0);

@@ -24,3 +24,8 @@
     font-size: 1.5rem;
     margin-top: 50px;
 }
+
+.decouvrir:hover{
+    box-shadow: inset 0px 2px 5px black;
+    background-color: #FF6165;
+}

@@ -12,12 +12,14 @@ import { CommonModule } from '@angular/common';
 import { PageNftModule } from './page-nft/page-nft.module';
 import { CollectionsModule } from './collections/collections.module';
 import { FormsModule } from '@angular/forms';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

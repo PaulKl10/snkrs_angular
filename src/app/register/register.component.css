@@ -1,0 +1,21 @@
+.btn1{
+    color: white;
+    background-color: #FF6165;
+    max-width: 160px;
+    display: block;
+    margin: auto;
+}
+.btn1:hover{
+    box-shadow: inset 0px 2px 5px black;
+    background-color: #FF6165;
+    
+}
+
+form div{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+input{
+    border-color: #FF6165;
+}

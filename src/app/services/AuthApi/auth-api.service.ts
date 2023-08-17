@@ -20,15 +20,20 @@ export class AuthApiService {
     return this.http.post<any>(`${this.apiUrl}/login`, credentials);
   }
 
-  register(username: string, password: string): Observable<any> {
-    const credentials = { username, password };
-    return this.http.post<any>(`${this.apiUrl}/user/new`, credentials);
+  register(pseudo: string, email: string, password: string, gender: string, lastname: string, firstname: string, birthDate: Date, adress: number): Observable<any> {
+    const credentials = { pseudo, email, password, gender, lastname, firstname, birthDate, adress };
+    return this.http.post<any>(`${this.apiUrl}/register`, credentials);
   }
 
-  logout() {
+  adressRegister(street: string, code_postal: number, city: string): Observable<any> {
+    const credentials = { street, code_postal, city };
+    return this.http.post<any>(`${this.apiUrl}/adress/new`, credentials);
+  }
+
+  logout(): void {
     localStorage.removeItem(AUTH_TOKEN_KEY);
     localStorage.removeItem(USERNAME_KEY);
-    this.router.navigate(['/acceuil']);
+    this.router.navigate(['/accueil']);
   }
 
   isLoggedIn(): boolean {

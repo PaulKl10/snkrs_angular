@@ -5,6 +5,10 @@
 .contactmargin{
     margin-top: 0;
 }
+.contactmargin a:hover{
+    box-shadow: inset 0px 2px 5px black;
+    background-color: #FF6165;
+}
 .contactmargin img{
     transform: scaleX(-1) rotate(30deg);
     margin-bottom: 68px;
@@ -22,6 +26,9 @@ footer{
 footer a{
     text-decoration: none;
     color: white;
+}
+footer a:hover{
+    color:black;
 }
 .traitblanc{
     width: 35%;

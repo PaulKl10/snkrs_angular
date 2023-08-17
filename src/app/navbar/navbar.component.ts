@@ -16,6 +16,7 @@ export class NavbarComponent implements OnDestroy {
   password: string = '';
   private subscription: Subscription | undefined;
   isLoggedIn: boolean = false;
+  error: string = '';
 
   constructor(private authService: AuthApiService, private router: Router) {
     const authToken = localStorage.getItem('authToken');
@@ -35,6 +36,7 @@ export class NavbarComponent implements OnDestroy {
       },
       error: (error) => {
         console.error('Erreur lors de la connexion:', error);
+        this.error = "Identifiant inconnu";
       },
     });
   }
@@ -57,8 +59,8 @@ export class NavbarComponent implements OnDestroy {
     }
   }
 
-  public logout() {
+  public logout(): void {
     this.authService.logout();
-    window.location.reload();
+    this.isLoggedIn = false;
   }
 }

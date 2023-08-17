@@ -10,6 +10,9 @@
 }
 .btn1:hover{
     box-shadow: inset 0px 2px 5px black;
-    background-color: #FF6165;
-    
+    background-color: #FF6165; 
+}
+
+a:hover{
+    color: #FF6165;
 }
