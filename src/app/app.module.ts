@@ -30,7 +30,7 @@ import { RegisterComponent } from './register/register.component';
     CommonModule,
     PageNftModule,
     CollectionsModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

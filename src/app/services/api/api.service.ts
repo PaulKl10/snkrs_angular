@@ -26,4 +26,15 @@ export class ApiService {
   getCategory($id: any): Observable<any> {
     return this.http.get(`${this.baseUrl}/category/${$id}`);
   }
+
+  addNftToUser(nft: number, user: number, prix_eur: number, prix_eth: number) {
+    const credentials = { nft, user, prix_eur, prix_eth };
+    console.log(credentials);
+    return this.http.post<any>(`${this.baseUrl}/purchaseNft/new`, credentials);
+  }
+
+  getUserByEmail(email: string) {
+    const credentials = { email };
+    return this.http.post<any>(`${this.baseUrl}/user/findBy`, credentials);
+  }
 }
