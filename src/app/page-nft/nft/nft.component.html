@@ -20,11 +20,17 @@
         <span class="fs-3 mb-3">{{nft.nftPrice.price_eth_value}}<img width="55px" src="../../../assets/img/ethereum.png" alt="ethereum"></span>
         <!-- QUANTITÉ -->
         <span class="bleu fw-bold mb-2">Quantité: {{nft.stock}}</span>
-        <!-- BOUTON ACHETER OU FAIRE UNE OFFRE -->
-        <div class="d-flex gap-4 mb-5 mx-auto mx-lg-0">
-            <button (click)="addNftToUser()" type="button" class="btn btn1 nav-link my-auto text-white p-2">Ajouter
+        <!-- BOUTON ACHETER OU FAIRE UNE OFFRE 
+        <div *ngIf="user" class="d-flex gap-4 mb-5 mx-auto mx-lg-0">
+            <button *ngFor="let isAdded of user.purchaseNfts" (click)="addNftToUser()" type="button" class="btn btn1 nav-link my-auto text-white p-2">Ajouter
             </button>
-        </div>
+        </div>-->
+        <div>
+            <button [disabled]="isBought" (click)="addNftToUser()" type="button" class="btn btn1 nav-link my-auto text-white p-2">
+            Ajouter
+            </button>
+            <p>Vous avez déjà ce nft !</p>
+          </div>
         </div>
     </div>
 </section>
