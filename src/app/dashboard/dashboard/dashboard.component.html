@@ -1,0 +1,41 @@
+<h1 *ngIf="user" class="text-center">
+    Bonjour {{ user.pseudo}}
+</h1>
+<h2 *ngIf="user" class="text-center">Vos NFTs</h2>
+<table *ngIf="user" class="table w-75 m-auto table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">NFT</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price_ETH</th>
+        <th scope="col">Price_Eur</th>
+        <th scope="col">Purchase_date</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let nft of user.purchaseNfts; let i=index">
+        <td style="max-width: 300px;">
+            <a [routerLink]="['/nft', nft.Nft.id]">
+            <img class="rounded-4 img-fluid"
+                style="min-width: 200px;"   
+                [src]="'../../../assets/img/' + nft.Nft.img"
+                [alt]="nft.Nft.name"
+                [ngClass]="getBorderClass(i)">
+        </a>
+    </td>
+        <td>
+            <h3>{{nft.Nft.name}}</h3>
+            <p>{{nft.Nft.description}}</p>
+        </td>
+        <td>{{nft.nft_eth_price}}</td>
+        <td>{{nft.nft_eur_price}}</td>
+        <td>{{nft.purchase_date}}</td>
+        <td><button (click)="deleteNft(nft.id)" class="btn btn1 nav-link h-75 my-auto text-white p-4">Supprimer</button></td>
+      </tr>
+    </tbody>
+  </table>
+<div *ngIf="!user" class="text-center">
+    <h2>Vous n'êtes pas encore connecté !</h2>
+    <p>Connectez vous pour profiter de votre dashboard</p>
+</div>

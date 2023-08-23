@@ -26,10 +26,10 @@
             </button>
         </div>-->
         <div>
-            <button [disabled]="isBought" (click)="addNftToUser()" type="button" class="btn btn1 nav-link my-auto text-white p-2">
+            <button *ngIf="isLoggedIn" [disabled]="isBought" (click)="addNftToUser()" type="button" class="btn btn1 nav-link my-auto text-white p-2">
             Ajouter
             </button>
-            <p>Vous avez déjà ce nft !</p>
+            <p *ngIf="isBought">Vous avez déjà ce nft !</p>
           </div>
         </div>
     </div>

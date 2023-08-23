@@ -15,6 +15,7 @@ export class NftComponent {
   user!: User;
   priceEth!: number;
   isBought: boolean = false;
+  isLoggedIn: boolean = false;
 
   constructor(private route: ActivatedRoute, private api: ApiService, private apiEth: ApiEthService) { }
 
@@ -26,15 +27,17 @@ export class NftComponent {
         var token = localStorage.getItem('authToken');
         if (token) {
           const decodedToken: any = jwtDecode(token);
-          this.api.getUserByEmail(decodedToken.email).subscribe(Data => {
+          if(decodedToken.username){
+            this.isLoggedIn = true;
+            this.api.getUserByEmail(decodedToken.username).subscribe(Data => {
             this.user = Data;
             this.userHasNft();
-          });
-          window.scrollTo(0, 0);
+            });
+            window.scrollTo(0, 0);
+          }        
         }
       });
     });
-
   }
 
   addNftToUser() {

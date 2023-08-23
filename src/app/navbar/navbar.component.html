@@ -10,9 +10,10 @@
           <a class="nav-link p-3" aria-current="page" routerLink="collection">Collections</a>
           <a class="nav-link p-3" href="#unnft?">Un NFT ?</a>
           <!-- Button trigger modal -->
-          <button *ngIf="!isLoggedIn" type="button" class="btn btn1 nav-link h-75 my-auto text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">Se connecter
-          </button>
+          <button *ngIf="!isLoggedIn" type="button" class="btn btn1 nav-link h-75 my-auto text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">Se connecter</button>
           <a *ngIf="!isLoggedIn" class="nav-link p-3" aria-current="page" routerLink="register">S'enregistrer</a>
+          <button *ngIf="isLoggedIn" type="button" class="btn btn1 nav-link h-75 my-auto text-white" routerLink="dashboard">Dashboard</button>
+          <button *ngIf="isAdmin" type="button" class="btn btn1 nav-link h-75 my-auto text-white" routerLink="admin">Admin</button>
           <button *ngIf="isLoggedIn" type="button" class="btn btn1 nav-link h-75 my-auto text-white" (click)="logout()">Se déconnecter
           </button>
 

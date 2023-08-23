@@ -2,6 +2,7 @@ import { Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AuthApiService } from '../services/AuthApi/auth-api.service';
 import { Router } from '@angular/router';
+import jwtDecode from 'jwt-decode';
 
 const AUTH_TOKEN_KEY = 'authToken';
 const USERNAME_KEY = 'username';
@@ -16,11 +17,21 @@ export class NavbarComponent implements OnDestroy {
   password: string = '';
   private subscription: Subscription | undefined;
   isLoggedIn: boolean = false;
+  isAdmin: boolean = false;
   error: string = '';
 
   constructor(private authService: AuthApiService, private router: Router) {
     const authToken = localStorage.getItem('authToken');
-    this.isLoggedIn = authToken !== null;
+    if (authToken){
+      const decodedToken: any = jwtDecode(authToken);
+      if(decodedToken.username){
+      this.isLoggedIn = authToken !== null;
+        if(decodedToken.roles.includes('ROLE_ADMIN')){
+          this.isAdmin = true;
+        }
+      }
+    }
+    
   }
 
   onSubmit() {
@@ -62,5 +73,6 @@ export class NavbarComponent implements OnDestroy {
   public logout(): void {
     this.authService.logout();
     this.isLoggedIn = false;
+    this.isAdmin = false;
   }
 }

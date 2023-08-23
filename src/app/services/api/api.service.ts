@@ -37,4 +37,8 @@ export class ApiService {
     const credentials = { email };
     return this.http.post<any>(`${this.baseUrl}/user/findBy`, credentials);
   }
+
+  deleteNftFromUser(PurchaseId: number){
+    return this.http.post<any>(`${this.baseUrl}/purchaseNft/${PurchaseId}`,"" );
+  }
 }
