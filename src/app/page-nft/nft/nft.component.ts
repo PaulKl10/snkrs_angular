@@ -53,11 +53,15 @@ export class NftComponent {
           .subscribe(
             response => {
               console.log("réussi");
+              this.api.setNft(this.nft.id, this.nft.name, this.nft.Category.id, this.nft.description, this.nft.img, this.nft.stock-1).subscribe(data => {
+                this.api.getNft(this.nft.id).subscribe(nftData => {
+                  this.nft = nftData;
+                });
+              })
               this.api.getUserByEmail(this.user.email).subscribe(Data => {
                 this.user = Data;
                 this.userHasNft();
               });
-              // window.location.reload();
             },
             error => {
               console.error('Une erreur s\'est produite :', error);
@@ -102,10 +106,12 @@ interface Nft {
   };
   stock: number;
   purchaseNfts: any[];
-  category: {
-    name: string;
-    description: string;
-  };
+  Category: Category;
+}
+
+interface Category{
+  id: number;
+  name: string;
 }
 
 interface User {

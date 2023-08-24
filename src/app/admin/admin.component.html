@@ -1,1 +1,45 @@
-<p>admin works!</p>
+<h1 *ngIf="isAdmin" class="text-center">Interface Administrateur</h1>
+<h1 *ngIf="!isAdmin" class="text-center">Cette page n'existe pas ! :/</h1>
+<section *ngIf="isAdmin && users" class="mt-5">
+    <h2 class="text-center">Users</h2>
+    <table class="table w-75 m-auto table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Email</th>
+            <th scope="col">Prénom</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users; let i=index">
+            <td>{{user.id}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.firstname}}</td>
+            <td>{{user.lastname}}</td>
+            <td><button (click)="deleteUser(user.id)" class="btn btn1 nav-link h-75 my-auto text-white p-4">Supprimer</button></td>
+          </tr>
+        </tbody>
+      </table>
+</section>
+<section *ngIf="isAdmin && nfts" class="mt-5">
+  <h2 class="text-center">Nft</h2>
+  <table class="table w-75 m-auto table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let nft of nfts; let i=index">
+          <td>{{nft.id}}</td>
+          <td>{{nft.name}}</td>
+          <td><button (click)="deleteNft(nft.id)" class="btn btn1 nav-link h-75 my-auto text-white p-4">Supprimer</button></td>
+        </tr>
+      </tbody>
+    </table>
+</section>
+

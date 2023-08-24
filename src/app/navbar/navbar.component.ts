@@ -19,8 +19,12 @@ export class NavbarComponent implements OnDestroy {
   isLoggedIn: boolean = false;
   isAdmin: boolean = false;
   error: string = '';
+  
 
   constructor(private authService: AuthApiService, private router: Router) {
+  }
+
+  ngOnInit() {
     const authToken = localStorage.getItem('authToken');
     if (authToken){
       const decodedToken: any = jwtDecode(authToken);
@@ -31,7 +35,13 @@ export class NavbarComponent implements OnDestroy {
         }
       }
     }
-    
+    // Délai de 2 heures (en millisecondes)
+    const inactivityTimeout = 2 * 60 * 60 * 1000;
+
+    // Démarre le délai avant la déconnexion
+    const timeoutId = setTimeout(() => {
+      this.logout();
+    }, inactivityTimeout);
   }
 
   onSubmit() {

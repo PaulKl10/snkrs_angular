@@ -19,6 +19,11 @@ export class ApiService {
     return this.http.get(`${this.baseUrl}/nft/${$id}`);
   }
 
+  setNft($id: any, name: string, category: number, description: string, img: string, stock: number): Observable<any>{
+    const credentials = { name, category, description, img, stock };
+    return this.http.post(`${this.baseUrl}/nft/${$id}/edit`, credentials);
+  }
+
   getCategories(): Observable<any> {
     return this.http.get(`${this.baseUrl}/category`);
   }

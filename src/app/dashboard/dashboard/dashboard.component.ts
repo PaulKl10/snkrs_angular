@@ -20,6 +20,7 @@ export class DashboardComponent {
           if (decodedToken.username) {
           this.api.getUserByEmail(decodedToken.username).subscribe(Data => {
             this.user = Data;
+            console.log(this.user);
           });
         }
       }
@@ -31,9 +32,12 @@ export class DashboardComponent {
       return classes[index % classes.length];
     }
 
-    deleteNft(PurchaseId: number): void {
+    deleteNft(PurchaseId: number, Nft: Nft): void {
       this.api.deleteNftFromUser(PurchaseId).subscribe(Response => {
         console.log("Achat supprimer");
+        this.api.setNft(Nft.id, Nft.name, Nft.Category.id, Nft.description, Nft.img, Nft.stock+1).subscribe(Data => {
+          console.log("Stock recharger");
+        });
         this.api.getUserByEmail(this.user.email).subscribe(Data => {
         this.user = Data;
       });
@@ -72,6 +76,14 @@ interface Nft {
   name: string;
   img: string;
   description: string;
+  stock: number;
+  Category: Category;
   launch_date: Date;
   // ... autres propriétés spécifiques du NFT
+}
+
+interface Category{
+  id: number;
+  name: string;
+  description: string;
 }
