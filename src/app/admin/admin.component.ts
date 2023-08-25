@@ -127,8 +127,27 @@ onEditUser(AdressId: number, UserId: number){
       });
     }
   });
+}
 
-  
+onEditNft(nftId: number, nftCategoryId: number, nftImg: string){
+  this.nfts.forEach(nft =>{
+    if(nftId === nft.id){
+      this.api.setNft(nftId, nft.name, nftCategoryId, nft.description, nftImg, nft.stock).subscribe({
+        next: (response) => {
+          if (response) {
+            console.log('Modifié avec succès !');
+            this.getNfts();
+            window.scrollTo(0, 0);
+            window.location.reload();
+          }
+        },
+        error: (error) => {
+          console.error('Erreur lors de la connexion:', error);
+          window.scrollTo(0, 0);
+        },
+      })
+    }
+  })  
 }
 }
 
@@ -148,15 +167,19 @@ interface Nft {
   img: string;
   launch_date: string;
   nftPrice: {
+    id: number;
     price_date: Date;
     price_eth_value: number;
   };
   stock: number;
   purchaseNfts: any[];
-  category: {
-    name: string;
-    description: string;
-  };
+  Category: Category;
+}
+
+interface Category{
+  id: number;
+  name: string;
+  description: string;
 }
 
 interface UserPurchase {

@@ -99,7 +99,40 @@
         <tr *ngFor="let nft of nfts; let i=index">
           <td>{{nft.id}}</td>
           <td>{{nft.name}}</td>
-          <td><button (click)="deleteNft(nft.id)" class="btn btn1 nav-link h-75 my-auto text-white p-4">Supprimer</button></td>
+          <td class="d-flex gap-2">
+            <button type="button" class="btn btn2 nav-link h-75 my-auto text-white p-4" data-bs-toggle="modal" [attr.data-bs-target]="'#editNftModal' + nft.id">Modifier</button>
+            <button (click)="deleteNft(nft.id)" class="btn btn1 nav-link h-75 my-auto text-white p-4">Supprimer</button>
+              <!-- Modal -->
+        <div class="modal fade" [id]="'editNftModal' + nft.id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+          <form class="modal-content" (ngSubmit)="onEditNft(nft.id, nft.Category.id, nft.img)">
+              <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Modifier Nft {{nft.name}}</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingName" placeholder="name" name="Nom" [(ngModel)]="nft.name" required>
+                  <label for="floatingName">Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingDescription" placeholder="Description" name="Description" [(ngModel)]="nft.description" required>
+                  <label for="floatingDescription">Description</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingStock" placeholder="Stock" name="Stock" [(ngModel)]="nft.stock" required>
+                  <label for="floatingStock">Stock</label>
+                </div>
+              </div>
+              <div class="modal-footer m-auto">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn1">Modifier</button>
+              </div>
+              <a class="nav-link p-3 text-center" aria-current="page" routerLink="register" data-bs-dismiss="modal">S'enregistrer</a>
+            </form>
+          </div>
+      </div>
+          </td>
         </tr>
       </tbody>
     </table>
