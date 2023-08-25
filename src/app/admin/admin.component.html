@@ -18,7 +18,69 @@
             <td>{{user.email}}</td>
             <td>{{user.firstname}}</td>
             <td>{{user.lastname}}</td>
-            <td><button (click)="deleteUser(user.id)" class="btn btn1 nav-link h-75 my-auto text-white p-4">Supprimer</button></td>
+            <td class="d-flex gap-2"> 
+              <button type="button" class="btn btn2 nav-link h-75 my-auto text-white p-4" data-bs-toggle="modal" [attr.data-bs-target]="'#editModal' + user.id">Modifier</button>
+              <button (click)="deleteUser(user.id)" class="btn btn1 nav-link h-75 my-auto text-white p-4">Supprimer</button>
+            <!-- Modal -->
+        <div class="modal fade" [id]="'editModal' + user.id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+          <form class="modal-content" (ngSubmit)="onEditUser(user.Adress.id, user.id)">
+              <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Modifier User {{user.pseudo}}</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingPseudo" placeholder="pseudo" name="pseudo" [(ngModel)]="user.pseudo" required>
+                  <label for="floatingPseudo">Pseudo</label>
+              </div>
+              <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingEmail" placeholder="name@example.com" name="email" [(ngModel)]="user.email" required>
+                  <label for="floatingEmail">Email</label>
+              </div>
+              <div class="form-floating">
+                  <select required class="form-select" id="floatingSelect" aria-label="Floating label select example" name="gender" [(ngModel)]="user.gender">
+                    <option value="homme">homme</option>
+                    <option value="femme">femme</option>
+                    <option value="autre">autre</option>
+                  </select>
+                  <label for="floatingSelect">Genre</label>
+              </div>
+              <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingLastname" placeholder="Lastname" name="lastname" [(ngModel)]="user.lastname" required>
+                  <label for="floatingLastname">lastname</label>
+              </div>
+              <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingFirstname" placeholder="Firstname" name="firstname" [(ngModel)]="user.firstname" required>
+                  <label for="floatingFirstname">Firstname</label>
+              </div>
+              <div class="form-floating">
+                  <input type="date" class="form-control" id="floatingBirthDate" placeholder="Date de naissance" name="birthDate" [(ngModel)]="user.birthDate" required>
+                  <label for="floatingBirthDate">Date de naissance</label>
+              </div>
+              <p class="fs-4">Adresse</p>
+              <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingStreet" placeholder="Adresse" name="street" [(ngModel)]="user.Adress.street" required>
+                  <label for="floatingStreet">Adresse</label>
+              </div>
+              <div class="form-floating">
+                  <input pattern="[0-9]{6}" type="text" class="form-control" id="floatingCodePostal" placeholder="Code Postal" name="code_postal" [(ngModel)]="user.Adress.code_postal" required>
+                  <label for="floatingCodePostal">Code Postal</label>
+              </div>
+              <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingCity" placeholder="Ville" name="city" [(ngModel)]="user.Adress.city" required>
+                  <label for="floatingCity">Ville</label>
+              </div>
+              </div>
+              <div class="modal-footer m-auto">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn1">Modifier</button>
+              </div>
+              <a class="nav-link p-3 text-center" aria-current="page" routerLink="register" data-bs-dismiss="modal">S'enregistrer</a>
+            </form>
+          </div>
+      </div>
+    </td>
           </tr>
         </tbody>
       </table>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import jwtDecode from 'jwt-decode';
 import { ApiAdminService } from '../services/apiAdmin/api-admin.service';
 import { ApiService } from '../services/api/api.service';
+import { of, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-admin',
@@ -12,6 +13,7 @@ export class AdminComponent {
 isAdmin: boolean = false;
 users!: User[];
 nfts!: Nft[];
+
 
 constructor(private apiAdmin: ApiAdminService, private api: ApiService){}
 
@@ -95,6 +97,39 @@ deletePurchaseNftFromNft(NftId: number){
     });
   })
 }
+
+onEditUser(AdressId: number, UserId: number){
+  this.users.forEach((user: User) => {
+    if(user.id === UserId){
+      this.apiAdmin.setAdress(AdressId,user.Adress.street, user.Adress.code_postal, user.Adress.city)
+      .pipe(
+        switchMap((response) => {
+          if (response) {
+            console.log('Adresse modifiée avec succès !');
+            return this.apiAdmin.setUser(UserId, user.pseudo, user.email, user.gender, user.lastname, user.firstname, user.birthDate, user.Adress.id);
+          }
+          return of(null);
+        })
+      )
+      .subscribe({
+        next: (response) => {
+          if (response) {
+            console.log('Modifié avec succès !');
+            this.getUsers();
+            window.scrollTo(0, 0);
+            window.location.reload();
+          }
+        },
+        error: (error) => {
+          console.error('Erreur lors de la connexion:', error);
+          window.scrollTo(0, 0);
+        },
+      });
+    }
+  });
+
+  
+}
 }
 
 interface PurchaseNft {
@@ -136,7 +171,9 @@ interface User {
   birthDate: Date;
   firstname: string;
   lastname: string;
+  gender: string;
   Adress: {
+    id: number;
     street: string;
     code_postal: number;
     city: string;

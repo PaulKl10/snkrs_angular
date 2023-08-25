@@ -3,7 +3,15 @@
     background-color: #FF6165;
     max-width: 160px;
 }
+.btn2{
+    color: white;
+    background-color: #173E70;
+    max-width: 160px;
+}
 .btn1:hover{
     box-shadow: inset 0px 2px 5px black;
     background-color: #FF6165; 
+}
+.btn2:hover{
+    box-shadow: inset 0px 2px 5px black;
 }
