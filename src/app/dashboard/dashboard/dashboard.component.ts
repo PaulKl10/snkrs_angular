@@ -20,11 +20,9 @@ export class DashboardComponent {
           if (decodedToken.username) {
           this.api.getUserByEmail(decodedToken.username).subscribe(Data => {
             this.user = Data;
-            console.log(this.user);
           });
         }
-      }
-      
+      }      
     }
 
     getBorderClass(index: number): string {

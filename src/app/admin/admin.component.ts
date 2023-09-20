@@ -10,7 +10,6 @@ import { of, switchMap } from 'rxjs';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent {
-isAdmin: boolean = false;
 users!: User[];
 nfts!: Nft[];
 
@@ -18,15 +17,9 @@ nfts!: Nft[];
 constructor(private apiAdmin: ApiAdminService, private api: ApiService){}
 
 ngOnInit() {
-  const authToken = localStorage.getItem('authToken');
-    if (authToken){
-      const decodedToken: any = jwtDecode(authToken);
-        if(decodedToken.roles.includes('ROLE_ADMIN')){
-          this.isAdmin = true;
-          this.getUsers();
-          this.getNfts();
-        }
-    }
+  
+  this.getUsers();
+  this.getNfts();
 }
 
 getUsers(): void{

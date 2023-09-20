@@ -1,6 +1,5 @@
-<h1 *ngIf="isAdmin" class="text-center">Interface Administrateur</h1>
-<h1 *ngIf="!isAdmin" class="text-center">Cette page n'existe pas ! :/</h1>
-<section *ngIf="isAdmin && users" class="mt-5">
+<h1 class="text-center">Interface Administrateur</h1>
+<section *ngIf="users" class="mt-5">
     <h2 class="text-center">Users</h2>
     <table class="table w-75 m-auto table-bordered">
         <thead>
@@ -85,7 +84,7 @@
         </tbody>
       </table>
 </section>
-<section *ngIf="isAdmin && nfts" class="mt-5">
+<section *ngIf="nfts" class="mt-5">
   <h2 class="text-center">Nft</h2>
   <table class="table w-75 m-auto table-bordered">
       <thead>

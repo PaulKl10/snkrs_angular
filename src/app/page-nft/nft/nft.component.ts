@@ -14,6 +14,7 @@ export class NftComponent {
   nft!: Nft;
   user!: User;
   priceEth!: number;
+  isEmpty: boolean = false;
   isBought: boolean = false;
   isLoggedIn: boolean = false;
 
@@ -24,6 +25,9 @@ export class NftComponent {
       const nftId = params.get('id');
       this.api.getNft(nftId).subscribe(nftData => {
         this.nft = nftData;
+        if(this.nft.stock <= 0){
+          this.isEmpty = true;
+        }
         var token = localStorage.getItem('authToken');
         if (token) {
           const decodedToken: any = jwtDecode(token);
@@ -56,6 +60,9 @@ export class NftComponent {
               this.api.setNft(this.nft.id, this.nft.name, this.nft.Category.id, this.nft.description, this.nft.img, this.nft.stock-1).subscribe(data => {
                 this.api.getNft(this.nft.id).subscribe(nftData => {
                   this.nft = nftData;
+                  if(this.nft.stock <= 0){
+                    this.isEmpty = true;
+                  }
                 });
               })
               this.api.getUserByEmail(this.user.email).subscribe(Data => {

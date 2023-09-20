@@ -7,14 +7,16 @@ import { CategoryComponent } from './collections/category/category.component';
 import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { AdminComponent } from './admin/admin.component';
+import { AuthGuard } from './guards/auth.guard';
+import { AdminGuard } from './guards/admin/admin.guard';
 
 const routes: Routes = [
   { path: "", component: AccueilComponent },
   { path: "accueil", component: AccueilComponent },
   { path: "nft/:id", component: NftComponent },
   { path: "register", component: RegisterComponent },
-  { path: "dashboard", component: DashboardComponent },
-  { path: "admin", component: AdminComponent },
+  { path: "dashboard", component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: "admin", component: AdminComponent, canActivate: [AdminGuard] },
   {
     path: "collection", component: CollectionsComponent, children: [
       { path: "category/:id", component: CategoryComponent }

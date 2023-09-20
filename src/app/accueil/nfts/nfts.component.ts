@@ -37,7 +37,7 @@ interface Nft {
   launch_date: string;
   nftPrice: number | null;
   stock: number;
-  purchaseNfts: any[]; // Remplacez 'any' par le type correct si nécessaire
+  purchaseNfts: any[];
   category: {
     name: string;
     description: string;
